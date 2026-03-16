@@ -1,0 +1,28 @@
+aid: ngrok-ai
+name: Ngrok AI Gateway
+description: >-
+  ngrok AI Gateway provides traffic management and security for AI APIs including
+  LLM prompt inspection, rate limiting, caching, and observability. It enables
+  teams to manage, secure, and monitor traffic to AI model providers.
+type: Index
+image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+tags:
+  - AI Gateway
+  - LLM
+  - API Gateway
+  - Security
+url: https://raw.githubusercontent.com/api-evangelist/ngrok-ai/refs/heads/main/apis.yml
+created: '2026-03-16'
+modified: '2026-03-16'
+specificationVersion: '0.19'
+apis: []
+common:
+  - type: Website
+    url: https://ngrok.com/ai-gateway
+  - type: Documentation
+    url: https://ngrok.com/docs/ai-gateway/
+  - type: Getting Started
+    url: https://ngrok.com/docs/ai-gateway/getting-started/
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com
