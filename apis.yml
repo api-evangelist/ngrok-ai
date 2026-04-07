@@ -8,8 +8,8 @@ type: Index
 image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
 tags:
   - AI Gateway
-  - LLM
   - API Gateway
+  - LLM
   - Security
 url: https://raw.githubusercontent.com/api-evangelist/ngrok-ai/refs/heads/main/apis.yml
 created: '2026-03-16'
