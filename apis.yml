@@ -119,6 +119,11 @@ common:
         description: Routing to self-hosted Ollama instances.
       - name: vLLM
         description: Routing to self-hosted vLLM inference servers.
+  - type: Integrations
+    url: https://ngrok.com/docs/integrations
+integrations:
+  - name: light
+  - name: dark
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
