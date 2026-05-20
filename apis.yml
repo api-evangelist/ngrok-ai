@@ -53,6 +53,8 @@ apis:
       - type: APIReference
         url: https://ngrok.com/docs/ai-gateway/
 common:
+  - type: LinkedIn
+    url: https://www.linkedin.com/company/ngrok
   - type: Website
     url: https://ngrok.com/ai-gateway
   - type: Documentation
