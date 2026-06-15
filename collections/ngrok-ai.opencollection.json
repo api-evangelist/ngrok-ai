@@ -1,0 +1,72 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "ngrok AI Gateway API",
+    "version": "v1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "OpenAI",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "OpenAI-compatible chat completions",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{gatewayDomain}/v1/chat/completions",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "Sends a chat completion request in OpenAI's Chat Completions\nformat. The gateway routes the request to the configured\nupstream model provider.\n"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Anthropic",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Anthropic-compatible messages",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{gatewayDomain}/v1/messages",
+            "headers": [
+              {
+                "name": "anthropic-version",
+                "value": ""
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "apikey",
+              "key": "x-api-key",
+              "value": "{{x-api-key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Sends a message creation request in Anthropic's Messages\nAPI format. The gateway routes the request to the configured\nupstream model provider.\n"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
