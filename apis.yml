@@ -123,7 +123,7 @@ common:
         description: Routing to self-hosted vLLM inference servers.
   - type: Integrations
     url: https://ngrok.com/docs/integrations
-  - type: LLMsTxt
+  - type: LlmsText
     url: https://ngrok.com/llms.txt
 integrations:
   - name: light
