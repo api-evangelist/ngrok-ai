@@ -53,6 +53,14 @@ apis:
       - type: APIReference
         url: https://ngrok.com/docs/ai-gateway/
 common:
+  - type: TrustCenter
+    url: security/ngrok-ai-trust-center.yml
+  - type: VulnerabilityDisclosure
+    url: security/ngrok-ai-vulnerability-disclosure.yml
+  - type: DomainSecurity
+    url: security/ngrok-ai-domain-security.yml
+  - type: Authentication
+    url: authentication/ngrok-ai-authentication.yml
   - type: LinkedIn
     url: https://www.linkedin.com/company/ngrok
   - type: Website
