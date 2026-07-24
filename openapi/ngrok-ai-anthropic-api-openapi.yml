@@ -1,0 +1,93 @@
+openapi: 3.1.0
+info:
+  title: ngrok AI Gateway Anthropic API
+  description: 'The ngrok AI Gateway exposes drop-in compatible REST endpoints
+
+    for OpenAI''s Chat Completions API and Anthropic''s Messages API.
+
+    Requests are authenticated with an AI Gateway API key issued by
+
+    ngrok, and the gateway forwards calls to managed upstream
+
+    providers using ngrok''s own provider credentials.
+
+    '
+  version: v1
+servers:
+- url: https://{gatewayDomain}
+  description: Per-account ngrok AI Gateway endpoint
+  variables:
+    gatewayDomain:
+      default: your-ai-gateway.ngrok.app
+      description: Your ngrok AI Gateway hostname
+tags:
+- name: Anthropic
+paths:
+  /v1/messages:
+    post:
+      summary: Anthropic-compatible messages
+      description: 'Sends a message creation request in Anthropic''s Messages
+
+        API format. The gateway routes the request to the configured
+
+        upstream model provider.
+
+        '
+      operationId: createMessage
+      tags:
+      - Anthropic
+      security:
+      - apiKeyAuth: []
+      parameters:
+      - in: header
+        name: anthropic-version
+        required: true
+        schema:
+          type: string
+          default: '2023-06-01'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                model:
+                  type: string
+                max_tokens:
+                  type: integer
+                messages:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      role:
+                        type: string
+                      content:
+                        type: string
+              required:
+              - model
+              - max_tokens
+              - messages
+      responses:
+        '200':
+          description: Message response
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      description: 'OpenAI-style authentication. Send the AI Gateway API key
+
+        (format `ng-xxxxx-g1-xxxxx`) as `Authorization: Bearer <key>`.
+
+        '
+    apiKeyAuth:
+      type: apiKey
+      in: header
+      name: x-api-key
+      description: 'Anthropic-style authentication. Send the AI Gateway API key
+
+        (format `ng-xxxxx-g1-xxxxx`) in the `x-api-key` header.
+
+        '
