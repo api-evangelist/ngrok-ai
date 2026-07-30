@@ -8,9 +8,22 @@ description: >-
   Google, DeepSeek) and self-hosted models such as Ollama and vLLM through an
   OpenAI-compatible interface.
 type: Index
+accessModel:
+  pricing: freemium
+  onboarding: self-serve
+  trial: false
+  try_now: true
+  public: false
+  label: Freemium · Self-serve signup
+  confidence: high
+  source:
+  - plans
+  - authentication
+  generated: '2026-07-22'
+  method: derived
 position: Consumer
 access: 3rd-Party
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/ngrok-ai.png
 tags:
   - AI
   - AI Gateway
@@ -26,32 +39,50 @@ created: '2026-03-16'
 modified: '2026-04-28'
 specificationVersion: '0.19'
 apis:
-  - aid: ngrok-ai:ai-gateway
-    name: ngrok AI Gateway
-    description: >-
-      ngrok AI Gateway exposes an OpenAI-compatible HTTP interface for routing
-      requests across multiple AI providers and self-hosted models. Each AI
-      Gateway instance has a unique base URL of the form
-      https://your-ai-gateway.ngrok.app/v1 and accepts standard OpenAI SDK calls
-      including chat completions. Traffic policies provide rate limiting, prompt
-      inspection, PII redaction, response sanitization, model access control,
-      cost-based routing, and automatic provider failover.
-    humanURL: https://ngrok.com/docs/ai-gateway/
-    baseURL: https://your-ai-gateway.ngrok.app/v1
-    tags:
-      - AI Gateway
-      - API Gateway
-      - LLM
-      - OpenAI Compatible
-      - Routing
-      - Security
-    properties:
-      - type: Documentation
-        url: https://ngrok.com/docs/ai-gateway/
-      - type: GettingStarted
-        url: https://ngrok.com/docs/ai-gateway/quickstart/
-      - type: APIReference
-        url: https://ngrok.com/docs/ai-gateway/
+- aid: ngrok-ai:ai-gateway
+  name: ngrok AI Gateway
+  description: >-
+    ngrok AI Gateway exposes an OpenAI-compatible HTTP interface for routing requests across multiple
+    AI providers and self-hosted models. Each AI Gateway instance has a unique base URL of the form https://your-ai-gateway.ngrok.app/v1
+    and accepts standard OpenAI SDK calls including chat completions. Traffic policies provide rate limiting,
+    prompt inspection, PII redaction, response sanitization, model access control, cost-based routing,
+    and automatic provider failover.
+  humanURL: https://ngrok.com/docs/ai-gateway/
+  baseURL: https://your-ai-gateway.ngrok.app/v1
+  tags:
+  - AI Gateway
+  - API Gateway
+  - LLM
+  - OpenAI Compatible
+  - Routing
+  - Security
+  properties:
+  - type: Documentation
+    url: https://ngrok.com/docs/ai-gateway/
+  - type: GettingStarted
+    url: https://ngrok.com/docs/ai-gateway/quickstart/
+  - type: APIReference
+    url: https://ngrok.com/docs/ai-gateway/
+- aid: ngrok-ai:ngrok-ai-anthropic-api
+  name: ngrok AI Gateway Anthropic API
+  description: The Anthropic API from ngrok AI Gateway — 1 operation(s) for anthropic.
+  humanURL: https://ngrok.com/docs/ai-gateway/
+  baseURL: https://your-ai-gateway.ngrok.app/v1
+  tags:
+  - Anthropic
+  properties:
+  - type: OpenAPI
+    url: openapi/ngrok-ai-anthropic-api-openapi.yml
+- aid: ngrok-ai:ngrok-ai-openai-api
+  name: ngrok AI Gateway OpenAI API
+  description: The OpenAI API from ngrok AI Gateway — 1 operation(s) for openai.
+  humanURL: https://ngrok.com/docs/ai-gateway/
+  baseURL: https://your-ai-gateway.ngrok.app/v1
+  tags:
+  - OpenAI
+  properties:
+  - type: OpenAPI
+    url: openapi/ngrok-ai-openai-api-openapi.yml
 common:
   - type: AgenticAccess
     url: agentic-access/ngrok-ai-agentic-access.yml
