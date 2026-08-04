@@ -1,0 +1,16 @@
+{
+  "provider": "ngrok-ai",
+  "sources": [
+    "ngrok-ai-anthropic-api-openapi.yml",
+    "ngrok-ai-openai-api-openapi.yml"
+  ],
+  "outputs": [
+    "ngrok-ai-anthropic-api-openapi.yml",
+    "ngrok-ai-openai-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
